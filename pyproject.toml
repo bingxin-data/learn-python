@@ -14,3 +14,8 @@ dependencies = [
     "seaborn>=0.12",
     "scikit-learn>=1.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=3.0",
+]

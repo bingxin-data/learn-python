@@ -15,7 +15,6 @@ Notebooks and materials for the data analyst track.
 | Notebook | Data |
 |----------|------|
 | `hypothesis_testing.ipynb` | `data/late_shipments.feather` |
-| `calendar_analysis.ipynb` | `data/calendar.ics` |
 
 Run notebooks with the working directory set to this folder (e.g. open `data-analyst` in Jupyter).
 

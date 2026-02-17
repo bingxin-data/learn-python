@@ -25,6 +25,10 @@ build/
 
 # Generated outputs (keep repo clean)
 data-analyst/output/
+data-analyst/output/*.png
+
+# Personal projects (not for GitHub)
+personal/
 
 # Large data (keep repo under GitHub’s limit; see playground/README.md for download)
 playground/data/
