@@ -1,0 +1,59 @@
+# Run notebooks to catch execution errors (e.g. missing imports, broken code).
+# Only runs notebooks in tracks that have their data in the repo (no playground – data is gitignored).
+name: Run notebooks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data-analyst/**"
+      - "machine-learning-scientist/**"
+      - "design-forecasting-pipelines-for-production/**"
+      - "pyproject.toml"
+      - "uv.lock"
+  pull_request:
+    branches: [main]
+    paths:
+      - "data-analyst/**"
+      - "machine-learning-scientist/**"
+      - "design-forecasting-pipelines-for-production/**"
+      - "pyproject.toml"
+      - "uv.lock"
+  workflow_dispatch:  # Allow manual run from Actions tab
+
+jobs:
+  notebooks:
+    name: Execute notebooks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Execute notebooks (data-analyst)
+        run: |
+          for nb in data-analyst/*.ipynb; do
+            [ -f "$nb" ] && echo "Running $nb" && uv run jupyter nbconvert --to notebook --execute --output-dir /tmp/nb-out "$nb"
+          done
+
+      - name: Execute notebooks (machine-learning-scientist)
+        run: |
+          for nb in machine-learning-scientist/*/*.ipynb machine-learning-scientist/*/*/*.ipynb; do
+            [ -f "$nb" ] && echo "Running $nb" && uv run jupyter nbconvert --to notebook --execute --output-dir /tmp/nb-out "$nb"
+          done
+
+      - name: Execute notebooks (design-forecasting)
+        run: |
+          for nb in design-forecasting-pipelines-for-production/*.ipynb; do
+            [ -f "$nb" ] && echo "Running $nb" && uv run jupyter nbconvert --to notebook --execute --output-dir /tmp/nb-out "$nb"
+          done
