@@ -1,0 +1,30 @@
+# Environment
+.venv/
+.uv/
+env/
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Generated outputs (keep repo clean)
+data-analyst/output/
+
+# Large data (keep repo under GitHub’s limit; see playground/README.md for download)
+playground/data/
