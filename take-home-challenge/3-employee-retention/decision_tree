@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<salary &le; 246500.0<br/>gini = 0.496<br/>samples = 17290<br/>value = [7890, 9400]<br/>class = Churned>, fillcolor="#dfeffb"] ;
+1 [label=<salary &le; 64500.0<br/>gini = 0.493<br/>samples = 15446<br/>value = [6833, 8613]<br/>class = Churned>, fillcolor="#d6ebfa"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<salary &le; 51500.0<br/>gini = 0.5<br/>samples = 2803<br/>value = [1393, 1410]<br/>class = Churned>, fillcolor="#fdfeff"] ;
+1 -> 2 ;
+3 [label=<gini = 0.5<br/>samples = 1669<br/>value = [856, 813]<br/>class = Not Churned>, fillcolor="#fef9f5"] ;
+2 -> 3 ;
+4 [label=<gini = 0.499<br/>samples = 1134<br/>value = [537, 597]<br/>class = Churned>, fillcolor="#ebf5fc"] ;
+2 -> 4 ;
+5 [label=<salary &le; 190500.0<br/>gini = 0.49<br/>samples = 12643<br/>value = [5440, 7203]<br/>class = Churned>, fillcolor="#cfe7f9"] ;
+1 -> 5 ;
+6 [label=<gini = 0.488<br/>samples = 10341<br/>value = [4361, 5980]<br/>class = Churned>, fillcolor="#c9e4f8"] ;
+5 -> 6 ;
+7 [label=<gini = 0.498<br/>samples = 2302<br/>value = [1079, 1223]<br/>class = Churned>, fillcolor="#e8f3fc"] ;
+5 -> 7 ;
+8 [label=<salary &le; 272500.0<br/>gini = 0.489<br/>samples = 1844<br/>value = [1057, 787]<br/>class = Not Churned>, fillcolor="#f8dfcc"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<salary &le; 270500.0<br/>gini = 0.498<br/>samples = 583<br/>value = [310, 273]<br/>class = Not Churned>, fillcolor="#fcf0e7"] ;
+8 -> 9 ;
+10 [label=<gini = 0.495<br/>samples = 532<br/>value = [293, 239]<br/>class = Not Churned>, fillcolor="#fae8db"] ;
+9 -> 10 ;
+11 [label=<gini = 0.444<br/>samples = 51<br/>value = [17, 34]<br/>class = Churned>, fillcolor="#9ccef2"] ;
+9 -> 11 ;
+12 [label=<seniority &le; 25.5<br/>gini = 0.483<br/>samples = 1261<br/>value = [747, 514]<br/>class = Not Churned>, fillcolor="#f7d8c1"] ;
+8 -> 12 ;
+13 [label=<gini = 0.488<br/>samples = 980<br/>value = [566, 414]<br/>class = Not Churned>, fillcolor="#f8ddca"] ;
+12 -> 13 ;
+14 [label=<gini = 0.458<br/>samples = 281<br/>value = [181, 100]<br/>class = Not Churned>, fillcolor="#f3c7a6"] ;
+12 -> 14 ;
+}
